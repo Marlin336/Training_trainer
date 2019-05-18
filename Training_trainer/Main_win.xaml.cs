@@ -57,5 +57,11 @@ namespace Training_trainer
 					e.Cancel = true;
 			}
 		}
+
+		private void B_ctrgr_Click(object sender, RoutedEventArgs e)
+		{
+			Crtgr_win win = new Crtgr_win();
+			win.Show();
+		}
 	}
 }

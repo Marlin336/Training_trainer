@@ -1,0 +1,30 @@
+﻿<Window x:Class="Training_trainer.Crtgr_win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Training_trainer"
+        mc:Ignorable="d"
+        Title="Crtgr_win" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Height="201" Margin="387,46,0,0" VerticalAlignment="Top" Width="336"/>
+        <Label Content="Упражнения:" HorizontalAlignment="Left" Margin="387,20,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cb_mon" Content="Понедельник" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_mon_Checked" Unchecked="Cb_mon_Unchecked"/>
+        <Label Content="Расписание:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cb_tue" Content="Вторник" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_tue_Checked" Unchecked="Cb_tue_Unchecked"/>
+        <CheckBox x:Name="cb_wed" Content="Среда" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_wed_Checked" Unchecked="Cb_wed_Unchecked"/>
+        <CheckBox x:Name="cb_thu" Content="Четверг" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_thu_Checked" Unchecked="Cb_thu_Unchecked"/>
+        <CheckBox x:Name="cb_fri" Content="Пятница" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_fri_Checked" Unchecked="Cb_fri_Unchecked"/>
+        <CheckBox x:Name="cb_sat" Content="Суббота" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_sat_Checked" Unchecked="Cb_sat_Unchecked"/>
+        <CheckBox x:Name="cb_sun" Content="Воскресенье" HorizontalAlignment="Left" Margin="10,223,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_sun_Checked" Unchecked="Cb_sun_Unchecked"/>
+        <ext:TimePicker x:Name="tp_mon" Margin="159,45,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
+        <ext:TimePicker x:Name="tp_tue" Margin="159,74,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
+        <ext:TimePicker x:Name="tp_wed" Margin="159,103,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
+        <ext:TimePicker x:Name="tp_thu" Margin="159,132,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
+        <ext:TimePicker x:Name="tp_fri" Margin="159,161,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
+        <ext:TimePicker x:Name="tp_sat" Margin="159,190,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
+        <ext:TimePicker x:Name="tp_sun" Margin="159,219,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
+
+    </Grid>
+</Window>
