@@ -27,78 +27,85 @@ namespace Training_trainer
 		private void Cb_mon_Checked(object sender, RoutedEventArgs e)
 		{
 			tp_mon.IsEnabled = true;
+			tp_mon.Value = DateTime.Parse("12:00");
 		}
 
 		private void Cb_tue_Checked(object sender, RoutedEventArgs e)
 		{
 			tp_tue.IsEnabled = true;
+			tp_tue.Value = DateTime.Parse("12:00");
 		}
 
 		private void Cb_wed_Checked(object sender, RoutedEventArgs e)
 		{
 			tp_wed.IsEnabled = true;
+			tp_wed.Value = DateTime.Parse("12:00");
 		}
 
 		private void Cb_thu_Checked(object sender, RoutedEventArgs e)
 		{
 			tp_thu.IsEnabled = true;
+			tp_thu.Value = DateTime.Parse("12:00");
 		}
 
 		private void Cb_fri_Checked(object sender, RoutedEventArgs e)
 		{
 			tp_fri.IsEnabled = true;
+			tp_fri.Value = DateTime.Parse("12:00");
 		}
 
 		private void Cb_sat_Checked(object sender, RoutedEventArgs e)
 		{
 			tp_sat.IsEnabled = true;
+			tp_sat.Value = DateTime.Parse("12:00");
 		}
 
 		private void Cb_sun_Checked(object sender, RoutedEventArgs e)
 		{
 			tp_sun.IsEnabled = true;
+			tp_sun.Value = DateTime.Parse("12:00");
 		}
 
 		private void Cb_mon_Unchecked(object sender, RoutedEventArgs e)
 		{
 			tp_mon.IsEnabled = false;
-			tp_mon.Value = DateTime.Parse("12:00");
+			tp_mon.Value = null;
 		}
 
 		private void Cb_tue_Unchecked(object sender, RoutedEventArgs e)
 		{
 			tp_tue.IsEnabled = false;
-			tp_tue.Value = DateTime.Parse("12:00");
+			tp_tue.Value = null;
 		}
 
 		private void Cb_wed_Unchecked(object sender, RoutedEventArgs e)
 		{
 			tp_wed.IsEnabled = false;
-			tp_wed.Value = DateTime.Parse("12:00");
+			tp_wed.Value = null;
 		}
 
 		private void Cb_thu_Unchecked(object sender, RoutedEventArgs e)
 		{
 			tp_thu.IsEnabled = false;
-			tp_thu.Value = DateTime.Parse("12:00");
+			tp_thu.Value = null;
 		}
 
 		private void Cb_fri_Unchecked(object sender, RoutedEventArgs e)
 		{
 			tp_fri.IsEnabled = false;
-			tp_fri.Value = DateTime.Parse("12:00");
+			tp_fri.Value = null;
 		}
 
 		private void Cb_sat_Unchecked(object sender, RoutedEventArgs e)
 		{
 			tp_sat.IsEnabled = false;
-			tp_sat.Value = DateTime.Parse("12:00");
+			tp_sat.Value = null;
 		}
 
 		private void Cb_sun_Unchecked(object sender, RoutedEventArgs e)
 		{
 			tp_sun.IsEnabled = false;
-			tp_sun.Value = DateTime.Parse("12:00");
+			tp_sun.Value = null;
 		}
 	}
 }

@@ -6,25 +6,72 @@
         xmlns:ext="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Training_trainer"
         mc:Ignorable="d"
-        Title="Crtgr_win" Height="450" Width="800" ResizeMode="NoResize">
-    <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="201" Margin="387,46,0,0" VerticalAlignment="Top" Width="336"/>
-        <Label Content="Упражнения:" HorizontalAlignment="Left" Margin="387,20,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cb_mon" Content="Понедельник" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_mon_Checked" Unchecked="Cb_mon_Unchecked"/>
-        <Label Content="Расписание:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cb_tue" Content="Вторник" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_tue_Checked" Unchecked="Cb_tue_Unchecked"/>
-        <CheckBox x:Name="cb_wed" Content="Среда" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_wed_Checked" Unchecked="Cb_wed_Unchecked"/>
-        <CheckBox x:Name="cb_thu" Content="Четверг" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_thu_Checked" Unchecked="Cb_thu_Unchecked"/>
-        <CheckBox x:Name="cb_fri" Content="Пятница" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_fri_Checked" Unchecked="Cb_fri_Unchecked"/>
-        <CheckBox x:Name="cb_sat" Content="Суббота" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_sat_Checked" Unchecked="Cb_sat_Unchecked"/>
-        <CheckBox x:Name="cb_sun" Content="Воскресенье" HorizontalAlignment="Left" Margin="10,223,0,0" VerticalAlignment="Top" FontSize="16" Checked="Cb_sun_Checked" Unchecked="Cb_sun_Unchecked"/>
-        <ext:TimePicker x:Name="tp_mon" Margin="159,45,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
-        <ext:TimePicker x:Name="tp_tue" Margin="159,74,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
-        <ext:TimePicker x:Name="tp_wed" Margin="159,103,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
-        <ext:TimePicker x:Name="tp_thu" Margin="159,132,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
-        <ext:TimePicker x:Name="tp_fri" Margin="159,161,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
-        <ext:TimePicker x:Name="tp_sat" Margin="159,190,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
-        <ext:TimePicker x:Name="tp_sun" Margin="159,219,0,0" ShowDropDownButton="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157" IsEnabled="False" DisplayDefaultValueOnEmptyText="True" Value="05/18/2019 12:00:00"/>
+        Title="Crtgr_win" Height="410" Width="758" ResizeMode="NoResize">
+    <Grid RenderTransformOrigin="0.537,0.473">
+        <GroupBox Margin="10,10,512,101">
+            <GroupBox.Header>
+                <Label FontSize="16" FontWeight="Bold" Content="Расписание"/>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="cb_mon" Content="Понедельник" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Checked="Cb_mon_Checked" Unchecked="Cb_mon_Unchecked"/>
+                <CheckBox x:Name="cb_tue" Content="Вторник" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Checked="Cb_tue_Checked" Unchecked="Cb_tue_Unchecked"/>
+                <CheckBox x:Name="cb_wed" Content="Среда" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Checked="Cb_wed_Checked" Unchecked="Cb_wed_Unchecked"/>
+                <CheckBox x:Name="cb_thu" Content="Четверг" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Checked="Cb_thu_Checked" Unchecked="Cb_thu_Unchecked"/>
+                <CheckBox x:Name="cb_fri" Content="Пятница" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Checked="Cb_fri_Checked" Unchecked="Cb_fri_Unchecked"/>
+                <CheckBox x:Name="cb_sat" Content="Суббота" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Checked="Cb_sat_Checked" Unchecked="Cb_sat_Unchecked"/>
+                <CheckBox x:Name="cb_sun" Content="Воскресенье" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Checked="Cb_sun_Checked" Unchecked="Cb_sun_Unchecked"/>
+                <ext:TimePicker x:Name="tp_mon" Grid.Column="1" Grid.Row="0" ShowDropDownButton="False" Height="26" VerticalAlignment="Center" IsEnabled="False" DisplayDefaultValueOnEmptyText="True"/>
+                <ext:TimePicker x:Name="tp_tue" Grid.Column="1" Grid.Row="1" ShowDropDownButton="False" Height="26" VerticalAlignment="Center" IsEnabled="False" DisplayDefaultValueOnEmptyText="True"/>
+                <ext:TimePicker x:Name="tp_wed" Grid.Column="1" Grid.Row="2" ShowDropDownButton="False" Height="26" VerticalAlignment="Center" IsEnabled="False" DisplayDefaultValueOnEmptyText="True"/>
+                <ext:TimePicker x:Name="tp_thu" Grid.Column="1" Grid.Row="3" ShowDropDownButton="False" Height="26" VerticalAlignment="Center" IsEnabled="False" DisplayDefaultValueOnEmptyText="True"/>
+                <ext:TimePicker x:Name="tp_fri" Grid.Column="1" Grid.Row="4" ShowDropDownButton="False" Height="26" VerticalAlignment="Center" IsEnabled="False" DisplayDefaultValueOnEmptyText="True"/>
+                <ext:TimePicker x:Name="tp_sat" Grid.Column="1" Grid.Row="5" ShowDropDownButton="False" Height="26" VerticalAlignment="Center" IsEnabled="False" DisplayDefaultValueOnEmptyText="True"/>
+                <ext:TimePicker x:Name="tp_sun" Grid.Column="1" Grid.Row="6" ShowDropDownButton="False" Height="26" VerticalAlignment="Center" IsEnabled="False" DisplayDefaultValueOnEmptyText="True"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Margin="0,10,10,10" HorizontalAlignment="Right" Width="486">
+            <GroupBox.Header>
+                <Label FontSize="16" FontWeight="Bold" Content="Упражнения"/>
+            </GroupBox.Header>
+            <Grid Margin="0">
+                <DataGrid Margin="0,5,0,60"/>
+                <Button Content="Добавить" HorizontalAlignment="Left" Width="154" Height="55" VerticalAlignment="Bottom" FontSize="16"/>
+                <Button Content="Удалить" Height="55" VerticalAlignment="Bottom" Margin="160,0" FontSize="16"/>
+                <Button Content="Просмотреть" Height="55" VerticalAlignment="Bottom" Margin="0,0,1,0" HorizontalAlignment="Right" Width="154" FontSize="16"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox HorizontalAlignment="Left" Margin="10,285,0,10" Width="230">
+            <GroupBox.Header>
+                <Label FontSize="16" FontWeight="Bold" Content="Возраст"/>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="cb_minage" Grid.Row="0" Content="Минимум" FontSize="16"/>
+                <CheckBox x:Name="cb_maxage" Grid.Row="1" Content="Максимум" FontSize="16"/>
+                <ext:ShortUpDown x:Name="num_minage" Grid.Row="0" Grid.Column="1" IsEnabled="False" Minimum="0" DisplayDefaultValueOnEmptyText="True" DefaultValue="0"/>
+                <ext:ShortUpDown x:Name="num_maxage" Grid.Row="1" Grid.Column="1" IsEnabled="False" Minimum="0" DisplayDefaultValueOnEmptyText="True" DefaultValue="0"/>
+            </Grid>
+        </GroupBox>
 
     </Grid>
 </Window>
