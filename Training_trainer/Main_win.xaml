@@ -8,10 +8,10 @@
         Title="Main_win" Height="550" Width="800" Closing="Window_Closing">
     <Grid>
         <Menu VerticalAlignment="Top" Height="25">
-            <MenuItem x:Name="b_logout" Header="Выход" Height="25" Click="B_logout_Click" HorizontalAlignment="Right"/>
+            <MenuItem x:Name="b_profile" Header="Профиль"/>
+            <MenuItem x:Name="b_logout" Header="Выход" Height="25" Click="B_logout_Click"/>
         </Menu>
-        <Button x:Name="b_ctrgr" Content="Создать группу" HorizontalAlignment="Left" Margin="10,0,0,10" Width="99" Height="44" VerticalAlignment="Bottom" Click="B_ctrgr_Click"/>
-        <Button Content="Удалить группу" HorizontalAlignment="Left" Margin="114,0,0,10" Width="99" Height="44" VerticalAlignment="Bottom"/>
+        <Button x:Name="b_ctrgr" Content="Создать группу" HorizontalAlignment="Left" Margin="10,0,0,10" Width="130" Height="44" VerticalAlignment="Bottom" Click="B_ctrgr_Click" FontSize="16"/>
         <TabControl Margin="10,30,10,59">
             <TabItem Header="Мои группы">
                 <Grid Background="#FFE5E5E5">

@@ -86,6 +86,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Profedit_win.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profile_win.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crtgr_win.xaml.cs">
@@ -96,6 +104,12 @@
     </Compile>
     <Compile Include="Main_win.xaml.cs">
       <DependentUpon>Main_win.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profedit_win.xaml.cs">
+      <DependentUpon>Profedit_win.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profile_win.xaml.cs">
+      <DependentUpon>Profile_win.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
