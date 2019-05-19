@@ -107,5 +107,25 @@ namespace Training_trainer
 			tp_sun.IsEnabled = false;
 			tp_sun.Value = null;
 		}
+
+		private void Cb_minage_Checked(object sender, RoutedEventArgs e)
+		{
+			num_minage.IsEnabled = true;
+		}
+
+		private void Cb_maxage_Checked(object sender, RoutedEventArgs e)
+		{
+			num_maxage.IsEnabled = true;
+		}
+
+		private void Cb_minage_Unchecked(object sender, RoutedEventArgs e)
+		{
+			num_minage.IsEnabled = false;
+		}
+
+		private void Cb_maxage_Unchecked(object sender, RoutedEventArgs e)
+		{
+			num_maxage.IsEnabled = false;
+		}
 	}
 }
