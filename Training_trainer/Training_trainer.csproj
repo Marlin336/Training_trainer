@@ -78,11 +78,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Crtxrcs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login_win.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Main_win.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Passreq.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,11 +107,17 @@
     <Compile Include="Crtgr_win.xaml.cs">
       <DependentUpon>Crtgr_win.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Crtxrcs.xaml.cs">
+      <DependentUpon>Crtxrcs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login_win.xaml.cs">
       <DependentUpon>Login_win.xaml</DependentUpon>
     </Compile>
     <Compile Include="Main_win.xaml.cs">
       <DependentUpon>Main_win.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Passreq.xaml.cs">
+      <DependentUpon>Passreq.xaml</DependentUpon>
     </Compile>
     <Compile Include="Profedit_win.xaml.cs">
       <DependentUpon>Profedit_win.xaml</DependentUpon>
