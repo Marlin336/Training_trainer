@@ -23,5 +23,11 @@ namespace Training_trainer
 		{
 			InitializeComponent();
 		}
+
+		private void B_edit_Click(object sender, RoutedEventArgs e)
+		{
+			Passreq win = new Passreq();
+			win.Show();
+		}
 	}
 }

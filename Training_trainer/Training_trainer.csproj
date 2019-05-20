@@ -74,11 +74,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View_win.xaml.cs">
+      <DependentUpon>View_win.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XrcsList.xaml.cs">
+      <DependentUpon>XrcsList.xaml</DependentUpon>
+    </Compile>
     <Page Include="Crtgr_win.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Crtxrcs.xaml">
+    <Page Include="CrtXrcs_win.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,13 +108,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View_win.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XrcsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crtgr_win.xaml.cs">
       <DependentUpon>Crtgr_win.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Crtxrcs.xaml.cs">
-      <DependentUpon>Crtxrcs.xaml</DependentUpon>
+    <Compile Include="CrtXrcs_win.xaml.cs">
+      <DependentUpon>CrtXrcs_win.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login_win.xaml.cs">
       <DependentUpon>Login_win.xaml</DependentUpon>

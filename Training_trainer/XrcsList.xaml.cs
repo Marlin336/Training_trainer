@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Training_trainer
 {
     /// <summary>
-    /// Логика взаимодействия для Crtxrcs.xaml
+    /// Логика взаимодействия для XrcsList.xaml
     /// </summary>
-    public partial class Crtxrcs : Window
+    public partial class XrcsList : Window
     {
-        public Crtxrcs()
+        public XrcsList()
         {
             InitializeComponent();
         }

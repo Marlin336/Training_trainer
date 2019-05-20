@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace Training_trainer
 {
     /// <summary>
-    /// Логика взаимодействия для Passreq.xaml
+    /// Логика взаимодействия для View_win.xaml
     /// </summary>
-    public partial class Passreq : Window
+    public partial class View_win : Window
     {
-        public Passreq()
+        public View_win()
         {
             InitializeComponent();
         }
-
-		private void B_accept_Click(object sender, RoutedEventArgs e)
-		{
-			if (tb_pass.Password == "0000")
-			{
-				Profedit_win win = new Profedit_win();
-				Close();
-				win.ShowDialog();
-			}
-		}
-	}
+    }
 }

@@ -24,7 +24,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="b_test" Content="Упражнения" HorizontalAlignment="Left" Margin="145,0,0,10" Width="130" Height="44" VerticalAlignment="Bottom" Click="B_ctrgr_Click" FontSize="16"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="145,465,0,0" VerticalAlignment="Top" Width="75" Height="44" Click="Button_Click"/>
 
     </Grid>
 </Window>

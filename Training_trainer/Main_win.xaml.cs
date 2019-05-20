@@ -63,5 +63,11 @@ namespace Training_trainer
 			Crtgr_win win = new Crtgr_win();
 			win.Show();
 		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			CrtXrcs_win win = new CrtXrcs_win();
+			win.Show();
+		}
 	}
 }
