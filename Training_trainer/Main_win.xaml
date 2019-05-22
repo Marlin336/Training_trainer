@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Main_win" Height="550" Width="800" Closing="Window_Closing">
     <Grid>
-        <Menu VerticalAlignment="Top" Height="25">
+        <Menu VerticalAlignment="Top" Height="25" Background="White">
             <MenuItem x:Name="b_profile" Header="Профиль"/>
             <MenuItem x:Name="b_logout" Header="Выход" Height="25" Click="B_logout_Click"/>
         </Menu>
@@ -15,7 +15,7 @@
         <TabControl Margin="10,30,10,59">
             <TabItem Header="Мои группы">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid/>
+                    <DataGrid ColumnHeaderHeight="30"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Все группы">
@@ -24,7 +24,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="145,465,0,0" VerticalAlignment="Top" Width="75" Height="44" Click="Button_Click"/>
 
     </Grid>
 </Window>

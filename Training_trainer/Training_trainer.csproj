@@ -77,8 +77,8 @@
     <Compile Include="View_win.xaml.cs">
       <DependentUpon>View_win.xaml</DependentUpon>
     </Compile>
-    <Compile Include="XrcsList.xaml.cs">
-      <DependentUpon>XrcsList.xaml</DependentUpon>
+    <Compile Include="XrcsList_win.xaml.cs">
+      <DependentUpon>XrcsList_win.xaml</DependentUpon>
     </Compile>
     <Page Include="Crtgr_win.xaml">
       <SubType>Designer</SubType>
@@ -112,7 +112,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="XrcsList.xaml">
+    <Page Include="XrcsList_win.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

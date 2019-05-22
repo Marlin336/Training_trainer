@@ -14,14 +14,14 @@ using System.Windows.Shapes;
 
 namespace Training_trainer
 {
-    /// <summary>
-    /// Логика взаимодействия для XrcsList.xaml
-    /// </summary>
-    public partial class XrcsList : Window
-    {
-        public XrcsList()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Логика взаимодействия для XrcsList_win.xaml
+	/// </summary>
+	public partial class XrcsList_win : Window
+	{
+		public XrcsList_win()
+		{
+			InitializeComponent();
+		}
+	}
 }
