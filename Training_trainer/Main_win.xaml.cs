@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Npgsql;
 
 namespace Training_trainer
 {
@@ -21,10 +22,35 @@ namespace Training_trainer
 	{
 		private bool logout { set; get; }
 		public Login_win super { get; }
-		public Main_win(Login_win super)
+		public int user_id { get; }
+		public NpgsqlConnection conn { get; }
+		public Main_win(Login_win super, int id, string login, string password)
 		{
 			InitializeComponent();
 			this.super = super;
+			user_id = id;
+			conn = new NpgsqlConnection("Server = 127.0.0.1; Port = 5432; User Id = " + login + "; Password = " + password + "; Database = Training;");
+			FillMyGroupsTable();
+			FillAllGroupsTable();
+		}
+
+		private void FillMyGroupsTable()
+		{
+
+		}
+		private void FillAllGroupsTable()
+		{
+
+		}
+		public void UpdateMyGroupsTable()
+		{
+			dg_mygr.Items.Clear();
+			FillMyGroupsTable();
+		}
+		public void UpdateAllGroupsTable()
+		{
+			dg_allgr.Items.Clear();
+			FillAllGroupsTable();
 		}
 
 		private void B_logout_Click(object sender, RoutedEventArgs e)
@@ -58,15 +84,19 @@ namespace Training_trainer
 			}
 		}
 
-		private void B_ctrgr_Click(object sender, RoutedEventArgs e)
+		private void Dg_mygr_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
 		{
-			Crtgr_win win = new Crtgr_win();
-			win.Show();
+			mb_myinfo.IsEnabled = mb_mysub.IsEnabled = mb_del_gr.IsEnabled = dg_mygr.SelectedCells.Count != 0;
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void Dg_allgr_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
 		{
-			CrtXrcs_win win = new CrtXrcs_win();
+			mb_allinfo.IsEnabled = mb_allsub.IsEnabled = dg_allgr.SelectedCells.Count != 0;
+		}
+
+		private void Mb_crt_gr_Click(object sender, RoutedEventArgs e)
+		{
+			Crtgr_win win = new Crtgr_win(this);
 			win.Show();
 		}
 	}

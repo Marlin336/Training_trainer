@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Npgsql;
 
 namespace Training_trainer
 {
@@ -36,19 +37,26 @@ namespace Training_trainer
 
 		private void B_ent_Click(object sender, RoutedEventArgs e)
 		{
-			if (/*Неверный логин*/tb_log.Text != "trainer")
+			string conn_param = "Server=127.0.0.1;Port=5432;User Id=Training_login;Password=0000;Database=Training;";
+			string sql = "select login_trainer('" + tb_log.Text + "', '" + tb_pass.Password + "')";
+			NpgsqlConnection conn = new NpgsqlConnection(conn_param);
+			NpgsqlCommand comm = new NpgsqlCommand(sql, conn);
+			conn.Open();
+			int result = (int)comm.ExecuteScalar();
+			conn.Close();
+			if (result == -1)
 			{
 				MessageBox.Show("Пользователя с таким логином не существует", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 			}
 			else
 			{
-				if (/*Неверный пароль*/tb_pass.Password != "0000")
+				if (result == -2)
 				{
 					MessageBox.Show("Пара логин-пароль не совпадают", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Warning);
 				}
 				else
 				{
-					Main_win main = new Main_win(this);
+					Main_win main = new Main_win(this, result, tb_log.Text, tb_pass.Password);
 					main.Show();
 					Hide();
 				}

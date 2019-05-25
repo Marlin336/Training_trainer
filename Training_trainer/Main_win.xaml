@@ -5,22 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Training_trainer"
         mc:Ignorable="d"
-        Title="Main_win" Height="550" Width="800" Closing="Window_Closing">
+        Title="Главное меню" Height="550" Width="800" Closing="Window_Closing" WindowState="Maximized">
     <Grid>
         <Menu VerticalAlignment="Top" Height="25" Background="White">
             <MenuItem x:Name="b_profile" Header="Профиль"/>
             <MenuItem x:Name="b_logout" Header="Выход" Height="25" Click="B_logout_Click"/>
         </Menu>
-        <Button x:Name="b_ctrgr" Content="Создать группу" HorizontalAlignment="Left" Margin="10,0,0,10" Width="130" Height="44" VerticalAlignment="Bottom" Click="B_ctrgr_Click" FontSize="16"/>
-        <TabControl Margin="10,30,10,59">
+        <TabControl Margin="0,30,0,0">
             <TabItem Header="Мои группы">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid ColumnHeaderHeight="30"/>
+                    <DataGrid x:Name="dg_mygr" Margin="0,0,0,40" FontSize="14" SelectedCellsChanged="Dg_mygr_SelectedCellsChanged"/>
+                    <Menu VerticalAlignment="Bottom" Height="40">
+                        <MenuItem x:Name="mb_crt_gr" Header="Создать группу" Height="40" FontSize="14" Click="Mb_crt_gr_Click"/>
+                        <MenuItem x:Name="mb_del_gr" Header="Удалить группу" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_mysub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_myinfo" Header="Информация" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_my_update" Header="Обновить список" Height="40" FontSize="14"/>
+                    </Menu>
                 </Grid>
             </TabItem>
             <TabItem Header="Все группы">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid/>
+                    <DataGrid x:Name="dg_allgr" Margin="0,0,0,40" SelectedCellsChanged="Dg_allgr_SelectedCellsChanged"/>
+                    <Menu VerticalAlignment="Bottom" Height="40">
+                        <MenuItem x:Name="mb_allsub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_allinfo" Header="Информация" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_all_update" Header="Обновить список" Height="40" FontSize="14"/>
+                    </Menu>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -5,20 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Training_trainer"
         mc:Ignorable="d"
-        Title="Новое упражнение" Height="403.348" Width="448.836" MinWidth="415.791" MinHeight="152.592">
+        Title="Новое упражнение" Height="435" Width="333.541" MinWidth="270" MinHeight="435">
     <Grid>
-        <GroupBox HorizontalAlignment="Left" Margin="10,0,0,10" Width="206">
+        <GroupBox Margin="10,70,10,57">
             <GroupBox.Header>
-                <Label Content="Мышцы" FontSize="16"/>
+                <Label Content="Мышцы" FontSize="16" FontWeight="Bold"/>
             </GroupBox.Header>
-            <TreeView Margin="0,-5,0,0"/>
+            <TreeView x:Name="tv_main" FontSize="14">
+                
+            </TreeView>
         </GroupBox>
-        <GroupBox Height="65" Margin="221,0,8,0" VerticalAlignment="Top">
+        <GroupBox Height="65" Margin="10,0" VerticalAlignment="Top">
             <GroupBox.Header>
-                <Label Content="Название" FontSize="16"/>
+                <Label Content="Название" FontSize="16" FontWeight="Bold"/>
             </GroupBox.Header>
-            <TextBox Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0"/>
+            <TextBox x:Name="tb_name" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0"/>
         </GroupBox>
-        <Button Content="Сохранить" Margin="221,0,8,10" FontSize="16" FontWeight="Bold" Height="42" VerticalAlignment="Bottom"/>
+        <Button Content="Сохранить" Margin="10,0,10,10" FontSize="16" FontWeight="Bold" Height="42" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

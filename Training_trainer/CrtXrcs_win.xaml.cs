@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Npgsql;
 
 namespace Training_trainer
 {
@@ -45,9 +46,61 @@ namespace Training_trainer
 	/// </summary>
 	public partial class CrtXrcs_win : Window
 	{
-		public CrtXrcs_win()
+		private class XTreeViewItem : TreeViewItem
+		{
+			public int id { get; }
+			public XTreeViewItem(int id, string header)
+			{
+				this.id = id;
+				Header = header;
+			}
+		}
+		private class XCheckBox : CheckBox
+		{
+			public int id { get; }
+			public XCheckBox(int id, string content)
+			{
+				this.id = id;
+				Content = content;
+			}
+		}
+		Main_win super { get; }
+		public CrtXrcs_win(Main_win super)
 		{
 			InitializeComponent();
+			this.super = super;
+			NpgsqlCommand comm = new NpgsqlCommand("select group_id, group_name from muscle_view group by group_id, group_name order by group_id", super.conn);
+			try
+			{
+				super.conn.Open();
+				NpgsqlDataReader reader = comm.ExecuteReader();
+				List<XTreeViewItem> list = new List<XTreeViewItem>();
+				for (int i = 0; reader.Read(); i++)
+				{
+					XTreeViewItem item = new XTreeViewItem(reader.GetInt32(0), reader.GetString(1));
+					list.Add(item);
+				}
+				for (int i = 0; i < list.Count; i++)
+				{
+					string sql = "select muscle_id, muscle_name from muscle_view where group_id = " + list[i].id + " group by muscle_id, muscle_name ";
+					comm = new NpgsqlCommand(sql, super.conn);
+					super.conn.Close();
+					super.conn.Open();
+					reader = comm.ExecuteReader();
+					for (int j = 0; reader.Read() ; j++)
+						list[i].Items.Add(new XCheckBox(reader.GetInt32(0), reader.GetString(1)));
+					tv_main.Items.Add(list[i]);
+				}
+			}
+			catch (NpgsqlException ex)
+			{
+				MessageBox.Show(ex.Message, "Ошибка на сервере", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+			}
+			finally { super.conn.Close(); }
 		}
 	}
 }
