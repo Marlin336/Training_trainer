@@ -65,10 +65,12 @@ namespace Training_trainer
 			}
 		}
 		Main_win super { get; }
-		public CrtXrcs_win(Main_win super)
+		XrcsList_win table_win { get; }
+		public CrtXrcs_win(Main_win super, XrcsList_win table)
 		{
 			InitializeComponent();
 			this.super = super;
+			table_win = table;
 			NpgsqlCommand comm = new NpgsqlCommand("select group_id, group_name from muscle_view group by group_id, group_name order by group_id", super.conn);
 			try
 			{
@@ -91,6 +93,46 @@ namespace Training_trainer
 						list[i].Items.Add(new XCheckBox(reader.GetInt32(0), reader.GetString(1)));
 					tv_main.Items.Add(list[i]);
 				}
+			}
+			catch (NpgsqlException ex)
+			{
+				MessageBox.Show(ex.Message, "Ошибка на сервере", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+			}
+			finally { super.conn.Close(); }
+		}
+
+		private void B_accept_Click(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				NpgsqlCommand comm = new NpgsqlCommand("select exercise_add('" + tb_name.Text + "')", super.conn);
+				super.conn.Open();
+				int exercise_id = (int)comm.ExecuteScalar();
+				super.conn.Close();
+				List<int> muscleList = new List<int>();
+				for (int i = 0; i < tv_main.Items.Count; i++)
+				{
+					var group = tv_main.Items[i] as XTreeViewItem;
+					for (int j = 0; j < group.Items.Count; j++)
+					{
+						var muscle = group.Items[j] as XCheckBox;
+						if (muscle.IsChecked.Value)
+							muscleList.Add(muscle.id);
+					}
+				}
+				for (int i = 0; i < muscleList.Count; i++)
+				{
+					comm = new NpgsqlCommand("INSERT INTO public.\"exercise-muscle\"(id_exercise, id_muscle) VALUES(" + exercise_id + ", " + muscleList[i] + ");", super.conn);
+					super.conn.Open();
+					comm.ExecuteNonQuery();
+					super.conn.Close();
+				}
+				table_win.UpdateUnpickTable();
+				Close();
 			}
 			catch (NpgsqlException ex)
 			{

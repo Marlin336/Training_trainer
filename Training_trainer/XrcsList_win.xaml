@@ -5,16 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Training_trainer"
         mc:Ignorable="d"
-        Title="Упражнения" Height="461" Width="380">
+        Title="Упражнения" Height="464" Width="713">
     <Grid>
-        <DataGrid x:Name="dg_list" Margin="10,10,10,64" FontSize="14">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="id" IsReadOnly="True" Visibility="Collapsed"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Название" IsReadOnly="True"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Добавить" Width="72"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="b_crt_exerc" Content="Создать упражнение" Margin="10,0,10,10" FontSize="16" Height="49" VerticalAlignment="Bottom" Click="B_crt_exerc_Click"/>
+        <GroupBox Margin="10,0,0,10" HorizontalAlignment="Left" Width="339">
+            <GroupBox.Header>
+                <Label FontSize="16" FontWeight="Bold" Content="Выбранные"/>
+            </GroupBox.Header>
+            <Grid Margin="0">
+                <DataGrid x:Name="dg_picked" Margin="0,5,0,60" FontSize="14" IsReadOnly="True" MouseDoubleClick="Dg_picked_MouseDoubleClick" SelectedCellsChanged="Dg_picked_SelectedCellsChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding id}" Header="id" Visibility="Collapsed"/>
+                        <DataGridTextColumn Binding="{Binding name}" Header="Упражнение"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="b_picked_info" Content="Информация" Height="55" VerticalAlignment="Bottom" FontSize="16"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Margin="0,0,10,10" HorizontalAlignment="Right" Width="339">
+            <GroupBox.Header>
+                <Label FontSize="16" FontWeight="Bold" Content="Не выбранные"/>
+            </GroupBox.Header>
+            <Grid Margin="0">
+                <DataGrid x:Name="dg_unpicked" Margin="0,5,0,60" FontSize="14" IsReadOnly="True" MouseDoubleClick="Dg_unpicked_MouseDoubleClick" SelectedCellsChanged="Dg_unpicked_SelectedCellsChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding id}" Header="id" Visibility="Collapsed"/>
+                        <DataGridTextColumn Binding="{Binding name}" Header="Упражнение"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                    <Button x:Name="b_unpicked_info" Content="Информация" Height="55" VerticalAlignment="Bottom" FontSize="16" Margin="0,0,196,0"/>
+                <Button x:Name="b_crt_exerc" Content="Новое упражнение" Margin="136,0,0,0" FontSize="16" Height="55" VerticalAlignment="Bottom" Click="B_crt_exerc_Click"/>
+            </Grid>
+        </GroupBox>
 
     </Grid>
 </Window>

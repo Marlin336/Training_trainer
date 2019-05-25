@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes.cs" />
     <Compile Include="View_win.xaml.cs">
       <DependentUpon>View_win.xaml</DependentUpon>
     </Compile>

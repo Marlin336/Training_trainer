@@ -21,13 +21,19 @@ namespace Training_trainer
     {
 		public Main_win super { get; }
 		private bool[] week = new bool[7];
-		public List<int> exerciseList = new List<int>();
+		public List<ExerciseList> exerciseList = new List<ExerciseList>();
         public Crtgr_win(Main_win super)
         {
             InitializeComponent();
 			this.super = super;
         }
 
+		public void UpdateList()
+		{
+			dg_list.Items.Clear();
+			foreach (var item in exerciseList)
+				dg_list.Items.Add(item);
+		}
 
 		#region checkbox_checking
 		private void Cb_mon_Checked(object sender, RoutedEventArgs e)
@@ -134,7 +140,7 @@ namespace Training_trainer
 
 		private void B_add_exerc_Click(object sender, RoutedEventArgs e)
 		{
-			XrcsList_win win = new XrcsList_win(super, exerciseList);
+			XrcsList_win win = new XrcsList_win(this, super, exerciseList);
 			win.Show();
 		}
 	}

@@ -21,6 +21,6 @@
             </GroupBox.Header>
             <TextBox x:Name="tb_name" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0"/>
         </GroupBox>
-        <Button Content="Сохранить" Margin="10,0,10,10" FontSize="16" FontWeight="Bold" Height="42" VerticalAlignment="Bottom"/>
+        <Button x:Name="b_accept" Content="Сохранить" Margin="10,0,10,10" FontSize="16" FontWeight="Bold" Height="42" VerticalAlignment="Bottom" IsDefault="True" Click="B_accept_Click"/>
     </Grid>
 </Window>
