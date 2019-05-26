@@ -8,7 +8,7 @@
         Title="Главное меню" Height="550" Width="800" Closing="Window_Closing" WindowState="Maximized">
     <Grid>
         <Menu VerticalAlignment="Top" Height="25" Background="White">
-            <MenuItem x:Name="b_profile" Header="Профиль"/>
+            <MenuItem x:Name="b_profile" Header="Профиль" Click="B_profile_Click"/>
             <MenuItem x:Name="b_logout" Header="Выход" Height="25" Click="B_logout_Click"/>
         </Menu>
         <TabControl Margin="0,30,0,0">
@@ -26,7 +26,7 @@
                     <Menu VerticalAlignment="Bottom" Height="40">
                         <MenuItem x:Name="mb_crt_gr" Header="Создать группу" Height="40" FontSize="14" Click="Mb_crt_gr_Click"/>
                         <MenuItem x:Name="mb_del_gr" Header="Удалить группу" Height="40" FontSize="14" IsEnabled="False" Click="Mb_del_gr_Click"/>
-                        <MenuItem x:Name="mb_mysub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_mysub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False" Click="Mb_mysub_Click"/>
                         <MenuItem x:Name="mb_myinfo" Header="Подробнее" Height="40" FontSize="14" IsEnabled="False" Click="Mb_myinfo_Click"/>
                         <MenuItem x:Name="mb_my_update" Header="Обновить список" Height="40" FontSize="14" Click="Mb_my_update_Click"/>
                     </Menu>
@@ -45,7 +45,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     <Menu VerticalAlignment="Bottom" Height="40">
-                        <MenuItem x:Name="mb_allsub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_allsub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False" Click="Mb_allsub_Click"/>
                         <MenuItem x:Name="mb_allinfo" Header="Подробнее" Height="40" FontSize="14" IsEnabled="False" Click="Mb_allinfo_Click"/>
                         <MenuItem x:Name="mb_all_update" Header="Обновить список" Height="40" FontSize="14" Click="Mb_all_update_Click"/>
                     </Menu>

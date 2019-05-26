@@ -86,18 +86,24 @@ namespace Training_trainer
 
 		private void Dg_unpicked_MouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
-			ExerciseList selected = dg_unpicked.SelectedItem as ExerciseList;
-			list.Add(selected);
-			UpdatePickTable();
-			UpdateUnpickTable();
+			if (dg_unpicked.SelectedItem != null)
+			{
+				ExerciseList selected = dg_unpicked.SelectedItem as ExerciseList;
+				list.Add(selected);
+				UpdatePickTable();
+				UpdateUnpickTable();
+			}
 		}
 
 		private void Dg_picked_MouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
-			ExerciseList selected = dg_picked.SelectedItem as ExerciseList;
-			list.Remove(selected);
-			UpdatePickTable();
-			UpdateUnpickTable();
+			if (dg_picked.SelectedItem != null)
+			{
+				ExerciseList selected = dg_picked.SelectedItem as ExerciseList;
+				list.Remove(selected);
+				UpdatePickTable();
+				UpdateUnpickTable();
+			}
 		}
 
 		private void Dg_unpicked_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)

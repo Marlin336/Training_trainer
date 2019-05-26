@@ -29,7 +29,7 @@ namespace Training_trainer
 			InitializeComponent();
 			this.super = super;
 			user_id = id;
-			conn = new NpgsqlConnection("Server = 127.0.0.1; Port = 5432; User Id = " + login + "; Password = " + password + "; Database = Training;");
+			conn = new NpgsqlConnection("Server = 127.0.0.1; Port = 5432; User Id = trainer_" + login + "; Password = " + password + "; Database = Training;");
 			FillMyGroupsTable();
 			FillAllGroupsTable();
 		}
@@ -189,6 +189,26 @@ namespace Training_trainer
 		private void Mb_allinfo_Click(object sender, RoutedEventArgs e)
 		{
 			Crtgr_win win = new Crtgr_win(this, dg_allgr.SelectedItem as GroupList, false);
+			win.Show();
+		}
+
+		private void Mb_mysub_Click(object sender, RoutedEventArgs e)
+		{
+			GroupList group = dg_mygr.SelectedItem as GroupList;
+			View_win win = new View_win(this, group.id);
+			win.Show();
+		}
+
+		private void Mb_allsub_Click(object sender, RoutedEventArgs e)
+		{
+			GroupList group = dg_mygr.SelectedItem as GroupList;
+			View_win win = new View_win(this, group.id);
+			win.Show();
+		}
+
+		private void B_profile_Click(object sender, RoutedEventArgs e)
+		{
+			Profile_win win = new Profile_win(this);
 			win.Show();
 		}
 	}

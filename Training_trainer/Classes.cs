@@ -34,4 +34,22 @@ namespace Training_trainer
 			this.sub = sub;
 		}
 	}
+	public class CustomerList
+	{
+		public int id { get; set; }
+		public string sname { get; set; }
+		public string fname { get; set; }
+		public string pname { get; set; }
+		public int age { get; set; }
+		public string mail { get; set; }
+		public CustomerList(int id, string sname, string fname, string pname, int age, string mail)
+		{
+			this.id = id;
+			this.sname = sname;
+			this.fname = fname;
+			this.pname = pname;
+			this.age = age;
+			this.mail = mail;
+		}
+	}
 }

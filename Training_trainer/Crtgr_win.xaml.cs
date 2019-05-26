@@ -125,10 +125,6 @@ namespace Training_trainer
 				gb_age.Margin = new Thickness(10, 0, 0, 75);
 				gb_timetable.Margin = new Thickness(10, 0, 0, 160);
 			}
-			else
-			{
-
-			}
 		}
 
 		public void UpdateList()
@@ -345,8 +341,11 @@ namespace Training_trainer
 
 		private void Dg_list_MouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
-			CrtXrcs_win win = new CrtXrcs_win(super, dg_list.SelectedItem as ExerciseList);
-			win.Show();
+			if (dg_list.SelectedItem != null)
+			{
+				CrtXrcs_win win = new CrtXrcs_win(super, dg_list.SelectedItem as ExerciseList);
+				win.Show();
+			}
 		}
 	}
 }

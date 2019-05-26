@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Training_trainer"
         mc:Ignorable="d"
-        Title="View_win" Height="450" Width="702">
+        Title="Список участников группы " Height="450" Width="702">
     <Grid>
-        <DataGrid Height="399" Margin="10,10,10,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dg_list" Margin="10" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Header="id" Visibility="Collapsed"/>
+                <DataGridTextColumn Binding="{Binding sname}" Header="Фамилия"/>
+                <DataGridTextColumn Binding="{Binding fname}" Header="Имя"/>
+                <DataGridTextColumn Binding="{Binding pname}" Header="Отчество"/>
+                <DataGridTextColumn Binding="{Binding age}" Header="Возраст"/>
+                <DataGridTextColumn Binding="{Binding mail}" Header="Эл. почта"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Training_trainer"
         mc:Ignorable="d"
-        Height="152" Width="404" Title="Профиль" MinWidth="274" MinHeight="152" ResizeMode="CanMinimize">
+        Height="176" Width="404" Title="Профиль" MinWidth="274" MinHeight="152" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label x:Name="l_name" Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontWeight="Bold"/>
-        <Label Content="Логин: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
-        <Label Content="E-mail: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
-        <Label Content="Дата рождения: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
-        <Button x:Name="b_edit" Margin="0,0,10,7" HorizontalAlignment="Right" Width="90" ToolTip="Редактировать" Height="31" VerticalAlignment="Bottom" Click="B_edit_Click" Content="Редактировать"/>
+        <Label x:Name="l_login" Content="Логин: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
+        <Label x:Name="l_mail" Content="E-mail: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+        <Label x:Name="l_birthday" Content="Дата рождения: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+        <Button x:Name="b_edit" Margin="0,0,10,7" HorizontalAlignment="Right" Width="104" ToolTip="Редактировать" Height="36" VerticalAlignment="Bottom" Click="B_edit_Click" Content="Редактировать" FontSize="14"/>
 
     </Grid>
 </Window>
