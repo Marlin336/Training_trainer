@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Новое упражнение" Height="435" Width="333.541" MinWidth="270" MinHeight="435">
     <Grid>
-        <GroupBox Margin="10,70,10,57">
+        <GroupBox x:Name="gb_muscle" Margin="10,70,10,57">
             <GroupBox.Header>
                 <Label Content="Мышцы" FontSize="16" FontWeight="Bold"/>
             </GroupBox.Header>

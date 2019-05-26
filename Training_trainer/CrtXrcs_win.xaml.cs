@@ -66,6 +66,7 @@ namespace Training_trainer
 		}
 		Main_win super { get; }
 		XrcsList_win table_win { get; }
+
 		public CrtXrcs_win(Main_win super, XrcsList_win table)
 		{
 			InitializeComponent();
@@ -103,6 +104,45 @@ namespace Training_trainer
 				MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
 			}
 			finally { super.conn.Close(); }
+		}
+		public CrtXrcs_win(Main_win super, ExerciseList exercise)
+		{
+			InitializeComponent();
+			b_accept.Visibility = Visibility.Collapsed;
+			gb_muscle.Margin = new Thickness(10, 70, 10, 10);
+			tb_name.IsReadOnly = true;
+			tb_name.Text = exercise.name;
+			Title = "Информация об упражнении";
+			this.super = super;
+			List<XTreeViewItem> groups = new List<XTreeViewItem>();
+			string sql = "select group_id, group_name from muscle_view, \"exercise-muscle\" where \"exercise-muscle\".id_muscle = muscle_view.muscle_id and \"exercise-muscle\".id_exercise = " + exercise.id + " group by group_id, group_name";
+			NpgsqlCommand comm = new NpgsqlCommand(sql, super.conn);
+			try
+			{
+				super.conn.Open();
+				NpgsqlDataReader reader = comm.ExecuteReader();
+				for (int i = 0; reader.Read(); i++)
+					groups.Add(new XTreeViewItem(reader.GetInt32(0), reader.GetString(1)));
+				super.conn.Close();
+				comm.CommandText = "Select group_id, muscle_id, muscle_name from muscle_view, \"exercise-muscle\" where \"exercise-muscle\".id_muscle = muscle_view.muscle_id and \"exercise-muscle\".id_exercise = " + exercise.id;
+				super.conn.Open();
+				reader = comm.ExecuteReader();
+				for (int i = 0; reader.Read(); i++) 
+					groups.Find(gr => gr.id == reader.GetInt32(0)).Items.Add(new XTreeViewItem(reader.GetInt32(1), reader.GetString(2)));
+				super.conn.Close();
+				foreach (var item in groups)
+					tv_main.Items.Add(item);
+			}
+			catch (NpgsqlException ex)
+			{
+				MessageBox.Show(ex.Message, "Ошибка на сервере", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+			}
+			finally { super.conn.Close(); }
+
 		}
 
 		private void B_accept_Click(object sender, RoutedEventArgs e)

@@ -18,7 +18,7 @@
                         <DataGridTextColumn Binding="{Binding name}" Header="Упражнение"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="b_picked_info" Content="Информация" Height="55" VerticalAlignment="Bottom" FontSize="16"/>
+                <Button x:Name="b_picked_info" Content="Информация" Height="55" VerticalAlignment="Bottom" FontSize="16" Click="B_picked_info_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox Margin="0,0,10,10" HorizontalAlignment="Right" Width="339">
@@ -32,7 +32,7 @@
                         <DataGridTextColumn Binding="{Binding name}" Header="Упражнение"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                    <Button x:Name="b_unpicked_info" Content="Информация" Height="55" VerticalAlignment="Bottom" FontSize="16" Margin="0,0,196,0"/>
+                    <Button x:Name="b_unpicked_info" Content="Информация" Height="55" VerticalAlignment="Bottom" FontSize="16" Margin="0,0,196,0" Click="B_unpicked_info_Click"/>
                 <Button x:Name="b_crt_exerc" Content="Новое упражнение" Margin="136,0,0,0" FontSize="16" Height="55" VerticalAlignment="Bottom" Click="B_crt_exerc_Click"/>
             </Grid>
         </GroupBox>

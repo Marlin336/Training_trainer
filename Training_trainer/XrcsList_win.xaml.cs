@@ -109,5 +109,17 @@ namespace Training_trainer
 		{
 			b_picked_info.IsEnabled = dg_picked.SelectedItems.Count != 0;
 		}
+
+		private void B_unpicked_info_Click(object sender, RoutedEventArgs e)
+		{
+			CrtXrcs_win win = new CrtXrcs_win(super, dg_unpicked.SelectedItem as ExerciseList);
+			win.Show();
+		}
+
+		private void B_picked_info_Click(object sender, RoutedEventArgs e)
+		{
+			CrtXrcs_win win = new CrtXrcs_win(super, dg_picked.SelectedItem as ExerciseList);
+			win.Show();
+		}
 	}
 }
