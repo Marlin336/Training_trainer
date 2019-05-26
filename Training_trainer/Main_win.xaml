@@ -14,23 +14,40 @@
         <TabControl Margin="0,30,0,0">
             <TabItem Header="Мои группы">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dg_mygr" Margin="0,0,0,40" FontSize="14" SelectedCellsChanged="Dg_mygr_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dg_mygr" Margin="0,0,0,40" FontSize="14" SelectedCellsChanged="Dg_mygr_SelectedCellsChanged" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id}" Header="Код группы"/>
+                            <DataGridTextColumn Binding="{Binding min_age}" Header="Мин. возраст"/>
+                            <DataGridTextColumn Binding="{Binding max_age}" Header="Макс. возраст"/>
+                            <DataGridTextColumn Binding="{Binding cost}" Header="Стоимость занятия"/>
+                            <DataGridTextColumn Binding="{Binding sub}" Header="Кол-во подписчиков"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                     <Menu VerticalAlignment="Bottom" Height="40">
                         <MenuItem x:Name="mb_crt_gr" Header="Создать группу" Height="40" FontSize="14" Click="Mb_crt_gr_Click"/>
-                        <MenuItem x:Name="mb_del_gr" Header="Удалить группу" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_del_gr" Header="Удалить группу" Height="40" FontSize="14" IsEnabled="False" Click="Mb_del_gr_Click"/>
                         <MenuItem x:Name="mb_mysub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False"/>
-                        <MenuItem x:Name="mb_myinfo" Header="Информация" Height="40" FontSize="14" IsEnabled="False"/>
-                        <MenuItem x:Name="mb_my_update" Header="Обновить список" Height="40" FontSize="14"/>
+                        <MenuItem x:Name="mb_myinfo" Header="Подробнее" Height="40" FontSize="14" IsEnabled="False" Click="Mb_myinfo_Click"/>
+                        <MenuItem x:Name="mb_my_update" Header="Обновить список" Height="40" FontSize="14" Click="Mb_my_update_Click"/>
                     </Menu>
                 </Grid>
             </TabItem>
             <TabItem Header="Все группы">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dg_allgr" Margin="0,0,0,40" SelectedCellsChanged="Dg_allgr_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dg_allgr" Margin="0,0,0,40" FontSize="14" SelectedCellsChanged="Dg_allgr_SelectedCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id}" Header="Код группы"/>
+                            <DataGridTextColumn Binding="{Binding trainer}" Header="Тренер"/>
+                            <DataGridTextColumn Binding="{Binding min_age}" Header="Мин. возраст"/>
+                            <DataGridTextColumn Binding="{Binding max_age}" Header="Макс. возраст"/>
+                            <DataGridTextColumn Binding="{Binding cost}" Header="Стоимость занятия"/>
+                            <DataGridTextColumn Binding="{Binding sub}" Header="Кол-во подписчиков"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                     <Menu VerticalAlignment="Bottom" Height="40">
                         <MenuItem x:Name="mb_allsub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False"/>
-                        <MenuItem x:Name="mb_allinfo" Header="Информация" Height="40" FontSize="14" IsEnabled="False"/>
-                        <MenuItem x:Name="mb_all_update" Header="Обновить список" Height="40" FontSize="14"/>
+                        <MenuItem x:Name="mb_allinfo" Header="Подробнее" Height="40" FontSize="14" IsEnabled="False"/>
+                        <MenuItem x:Name="mb_all_update" Header="Обновить список" Height="40" FontSize="14" Click="Mb_all_update_Click"/>
                     </Menu>
                 </Grid>
             </TabItem>

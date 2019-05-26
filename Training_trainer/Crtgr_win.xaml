@@ -47,13 +47,13 @@
                 <Label FontSize="16" FontWeight="Bold" Content="Упражнения"/>
             </GroupBox.Header>
             <Grid Margin="0">
-                <DataGrid x:Name="dg_list" Margin="0,5,0,60" FontSize="14">
+                <DataGrid x:Name="dg_list" Margin="0,0,0,60" FontSize="14" IsReadOnly="True" MouseDoubleClick="Dg_list_MouseDoubleClick">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding id}" Header="id" Visibility="Collapsed"/>
                         <DataGridTextColumn Binding="{Binding name}" Header="Упражнение"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="b_add_exerc" Content="Добавить упражнения" Height="55" VerticalAlignment="Bottom" FontSize="16" Click="B_add_exerc_Click"/>
+                <Button x:Name="b_add_exerc" Content="Список упражнений" Height="55" VerticalAlignment="Bottom" FontSize="16" Click="B_add_exerc_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox HorizontalAlignment="Left" Margin="10,277,0,129" Width="230">
@@ -77,7 +77,7 @@
         </GroupBox>
         <Label FontSize="16" FontWeight="Bold" Content="Стоимость" Margin="10,0,0,91" HorizontalAlignment="Left" Width="92" Height="30" VerticalAlignment="Bottom"/>
         <ext:ShortUpDown x:Name="num_cost" Minimum="0" DisplayDefaultValueOnEmptyText="True" DefaultValue="0" Margin="116,0,0,91" HorizontalAlignment="Left" Width="124" Height="25" VerticalAlignment="Bottom"/>
-        <Button x:Name="s_save" Content="Сохранить" HorizontalAlignment="Left" Margin="10,0,0,16" VerticalAlignment="Bottom" Width="230" FontSize="16" FontWeight="Bold" Height="55" Click="S_save_Click"/>
+        <Button x:Name="b_save" Content="Сохранить" HorizontalAlignment="Left" Margin="10,0,0,16" VerticalAlignment="Bottom" Width="230" FontSize="16" FontWeight="Bold" Height="55"/>
 
     </Grid>
 </Window>
