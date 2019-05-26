@@ -76,8 +76,8 @@
             </Grid>
         </GroupBox>
         <Label FontSize="16" FontWeight="Bold" Content="Стоимость" Margin="10,0,0,91" HorizontalAlignment="Left" Width="92" Height="30" VerticalAlignment="Bottom"/>
-        <ext:ShortUpDown x:Name="num_maxagey" Minimum="0" DisplayDefaultValueOnEmptyText="True" DefaultValue="0" Margin="116,0,0,91" HorizontalAlignment="Left" Width="124" Height="25" VerticalAlignment="Bottom"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="10,0,0,16" VerticalAlignment="Bottom" Width="230" FontSize="16" FontWeight="Bold" Height="55"/>
+        <ext:ShortUpDown x:Name="num_cost" Minimum="0" DisplayDefaultValueOnEmptyText="True" DefaultValue="0" Margin="116,0,0,91" HorizontalAlignment="Left" Width="124" Height="25" VerticalAlignment="Bottom"/>
+        <Button x:Name="s_save" Content="Сохранить" HorizontalAlignment="Left" Margin="10,0,0,16" VerticalAlignment="Bottom" Width="230" FontSize="16" FontWeight="Bold" Height="55" Click="S_save_Click"/>
 
     </Grid>
 </Window>
