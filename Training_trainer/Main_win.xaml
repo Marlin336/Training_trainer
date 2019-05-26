@@ -34,7 +34,7 @@
             </TabItem>
             <TabItem Header="Все группы">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dg_allgr" Margin="0,0,0,40" FontSize="14" SelectedCellsChanged="Dg_allgr_SelectedCellsChanged">
+                    <DataGrid x:Name="dg_allgr" Margin="0,0,0,40" FontSize="14" SelectedCellsChanged="Dg_allgr_SelectedCellsChanged" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding id}" Header="Код группы"/>
                             <DataGridTextColumn Binding="{Binding trainer}" Header="Тренер"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Training_trainer"
         mc:Ignorable="d"
-        Title="Редактировать профиль" Height="245.738" Width="356.803" ResizeMode="NoResize">
+        Title="Редактировать профиль" Height="347.738" Width="356.803" ResizeMode="NoResize">
     <Grid>
         <TextBox x:Name="tb_login" Height="23" Margin="137,0,10,141" VerticalAlignment="Bottom" FontSize="16">
         </TextBox>
@@ -17,6 +17,12 @@
         <Button x:Name="b_ok" Content="Сохранить" Margin="21,0,21,10" FontSize="16" IsDefault="True" Click="B_ok_Click" Height="43" VerticalAlignment="Bottom"/>
         <Label Content="Эл. почта" HorizontalAlignment="Left" FontSize="16" Width="110" Margin="10,0,0,178" Height="31" VerticalAlignment="Bottom"/>
         <TextBox x:Name="tb_mail" Height="23" Margin="137,0,10,178" VerticalAlignment="Bottom" FontSize="16"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,212" Height="31" VerticalAlignment="Bottom"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,248" VerticalAlignment="Bottom"/>
+        <Label Content="Имя" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,284" Height="31" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tb_pname" Height="23" Margin="137,0,10,212" VerticalAlignment="Bottom" FontSize="16"/>
+        <TextBox x:Name="tb_sname" Height="23" Margin="137,0,10,248" VerticalAlignment="Bottom" FontSize="16"/>
+        <TextBox x:Name="tb_fname" Height="23" Margin="137,0,10,284" VerticalAlignment="Bottom" FontSize="16"/>
 
     </Grid>
 </Window>
