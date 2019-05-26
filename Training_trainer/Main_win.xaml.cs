@@ -185,5 +185,11 @@ namespace Training_trainer
 			Crtgr_win win = new Crtgr_win(this, dg_mygr.SelectedItem as GroupList, true);
 			win.Show();
 		}
+
+		private void Mb_allinfo_Click(object sender, RoutedEventArgs e)
+		{
+			Crtgr_win win = new Crtgr_win(this, dg_allgr.SelectedItem as GroupList, false);
+			win.Show();
+		}
 	}
 }

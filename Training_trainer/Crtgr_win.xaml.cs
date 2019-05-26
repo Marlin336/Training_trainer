@@ -120,6 +120,10 @@ namespace Training_trainer
 				b_add_exerc.Visibility = Visibility.Collapsed;
 				dg_list.Margin = new Thickness(0);
 				b_save.Visibility = Visibility.Collapsed;
+				l_cost.Margin = new Thickness(10, 0, 0, 35);
+				num_cost.Margin = new Thickness(116, 0, 0, 35);
+				gb_age.Margin = new Thickness(10, 0, 0, 75);
+				gb_timetable.Margin = new Thickness(10, 0, 0, 160);
 			}
 			else
 			{

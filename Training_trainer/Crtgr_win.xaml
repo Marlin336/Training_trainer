@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Создать группу" Height="523" Width="644" ResizeMode="NoResize">
     <Grid RenderTransformOrigin="0.537,0.473">
-        <GroupBox Margin="10,0,0,217" HorizontalAlignment="Left" Width="230">
+        <GroupBox x:Name="gb_timetable" Margin="10,0,0,215" HorizontalAlignment="Left" Width="230">
             <GroupBox.Header>
                 <Label FontSize="16" FontWeight="Bold" Content="Расписание"/>
             </GroupBox.Header>
@@ -56,7 +56,7 @@
                 <Button x:Name="b_add_exerc" Content="Список упражнений" Height="55" VerticalAlignment="Bottom" FontSize="16" Click="B_add_exerc_Click"/>
             </Grid>
         </GroupBox>
-        <GroupBox HorizontalAlignment="Left" Margin="10,277,0,129" Width="230">
+        <GroupBox x:Name="gb_age" HorizontalAlignment="Left" Margin="10,0,0,130" Width="230" Height="88" VerticalAlignment="Bottom">
             <GroupBox.Header>
                 <Label FontSize="16" FontWeight="Bold" Content="Возраст"/>
             </GroupBox.Header>
@@ -75,8 +75,8 @@
                 <ext:ShortUpDown x:Name="num_maxage" Grid.Row="1" Grid.Column="1" IsEnabled="False" Minimum="0" DisplayDefaultValueOnEmptyText="True" DefaultValue="0"/>
             </Grid>
         </GroupBox>
-        <Label FontSize="16" FontWeight="Bold" Content="Стоимость" Margin="10,0,0,91" HorizontalAlignment="Left" Width="92" Height="30" VerticalAlignment="Bottom"/>
-        <ext:ShortUpDown x:Name="num_cost" Minimum="0" DisplayDefaultValueOnEmptyText="True" DefaultValue="0" Margin="116,0,0,91" HorizontalAlignment="Left" Width="124" Height="25" VerticalAlignment="Bottom"/>
+        <Label x:Name="l_cost" FontSize="16" FontWeight="Bold" Content="Стоимость" Margin="10,0,0,90" HorizontalAlignment="Left" Width="92" Height="30" VerticalAlignment="Bottom"/>
+        <ext:ShortUpDown x:Name="num_cost" Minimum="0" DisplayDefaultValueOnEmptyText="True" DefaultValue="0" Margin="116,0,0,90" HorizontalAlignment="Left" Width="124" Height="25" VerticalAlignment="Bottom"/>
         <Button x:Name="b_save" Content="Сохранить" HorizontalAlignment="Left" Margin="10,0,0,16" VerticalAlignment="Bottom" Width="230" FontSize="16" FontWeight="Bold" Height="55"/>
 
     </Grid>
