@@ -27,7 +27,7 @@
                         <MenuItem x:Name="mb_crt_gr" Header="Создать группу" Height="40" FontSize="14" Click="Mb_crt_gr_Click"/>
                         <MenuItem x:Name="mb_del_gr" Header="Удалить группу" Height="40" FontSize="14" IsEnabled="False" Click="Mb_del_gr_Click"/>
                         <MenuItem x:Name="mb_mysub" Header="Список подписавшихся" Height="40" FontSize="14" IsEnabled="False" Click="Mb_mysub_Click"/>
-                        <MenuItem x:Name="mb_myinfo" Header="Подробнее" Height="40" FontSize="14" IsEnabled="False" Click="Mb_myinfo_Click"/>
+                        <MenuItem x:Name="mb_myinfo" Header="Редактировать" Height="40" FontSize="14" IsEnabled="False" Click="Mb_myinfo_Click"/>
                         <MenuItem x:Name="mb_my_update" Header="Обновить список" Height="40" FontSize="14" Click="Mb_my_update_Click"/>
                     </Menu>
                 </Grid>

@@ -176,7 +176,7 @@ namespace Training_trainer
 		}
 		private void Mb_allsub_Click(object sender, RoutedEventArgs e)
 		{
-			GroupList group = dg_mygr.SelectedItem as GroupList;
+			GroupList group = dg_allgr.SelectedItem as GroupList;
 			View_win win = new View_win(this, group.id);
 			win.Show();
 		}
