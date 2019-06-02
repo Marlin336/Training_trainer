@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Npgsql;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Npgsql;
 
 namespace Training_trainer
 {
@@ -45,9 +35,7 @@ namespace Training_trainer
 				reader = comm.ExecuteReader();
 				for (int i = 0; reader.Read(); i++)
 				{
-					int sub;
-					try { sub = reader.GetInt32(6); } catch { sub = 0; }
-					dg_mygr.Items.Add(new GroupList(reader.GetInt32(0), reader.GetString(2), reader.GetValue(3).ToString(), reader.GetValue(4).ToString(), reader.GetInt32(5), sub));
+					dg_mygr.Items.Add(new GroupList(reader.GetInt32(0), reader.GetString(2), reader.GetValue(3).ToString(), reader.GetValue(4).ToString(), reader.GetInt32(5), reader.GetInt32(6)));
 				}
 			}
 			catch (NpgsqlException ex)
@@ -71,9 +59,7 @@ namespace Training_trainer
 				reader = comm.ExecuteReader();
 				for (int i = 0; reader.Read(); i++)
 				{
-					int sub;
-					try { sub = reader.GetInt32(6); } catch { sub = 0; }
-					dg_allgr.Items.Add(new GroupList(reader.GetInt32(0), reader.GetString(2), reader.GetValue(3).ToString(), reader.GetValue(4).ToString(), reader.GetInt32(5), sub));
+					dg_allgr.Items.Add(new GroupList(reader.GetInt32(0), reader.GetString(2), reader.GetValue(3).ToString(), reader.GetValue(4).ToString(), reader.GetInt32(5), reader.GetInt32(6)));
 				}
 			}
 			catch (NpgsqlException ex)
@@ -96,13 +82,12 @@ namespace Training_trainer
 			dg_allgr.Items.Clear();
 			FillAllGroupsTable();
 		}
-
+		#region events
 		private void B_logout_Click(object sender, RoutedEventArgs e)
 		{
 			logout = true;
 			Close();
 		}
-
 		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			if (logout)
@@ -127,23 +112,19 @@ namespace Training_trainer
 					e.Cancel = true;
 			}
 		}
-
 		private void Dg_mygr_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
 		{
 			mb_myinfo.IsEnabled = mb_mysub.IsEnabled = mb_del_gr.IsEnabled = dg_mygr.SelectedCells.Count != 0;
 		}
-
 		private void Dg_allgr_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
 		{
 			mb_allinfo.IsEnabled = mb_allsub.IsEnabled = dg_allgr.SelectedCells.Count != 0;
 		}
-
 		private void Mb_crt_gr_Click(object sender, RoutedEventArgs e)
 		{
 			Crtgr_win win = new Crtgr_win(this);
 			win.Show();
 		}
-
 		private void Mb_del_gr_Click(object sender, RoutedEventArgs e)
 		{
 			if (MessageBox.Show("Вы уверены что хотите распустить эту группу?", "Подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
@@ -169,47 +150,41 @@ namespace Training_trainer
 				finally { conn.Close(); }
 			}
 		}
-
 		private void Mb_all_update_Click(object sender, RoutedEventArgs e)
 		{
 			UpdateAllGroupsTable();
 		}
-
 		private void Mb_my_update_Click(object sender, RoutedEventArgs e)
 		{
 			UpdateMyGroupsTable();
 		}
-
 		private void Mb_myinfo_Click(object sender, RoutedEventArgs e)
 		{
 			Crtgr_win win = new Crtgr_win(this, dg_mygr.SelectedItem as GroupList, true);
 			win.Show();
 		}
-
 		private void Mb_allinfo_Click(object sender, RoutedEventArgs e)
 		{
 			Crtgr_win win = new Crtgr_win(this, dg_allgr.SelectedItem as GroupList, false);
 			win.Show();
 		}
-
 		private void Mb_mysub_Click(object sender, RoutedEventArgs e)
 		{
 			GroupList group = dg_mygr.SelectedItem as GroupList;
 			View_win win = new View_win(this, group.id);
 			win.Show();
 		}
-
 		private void Mb_allsub_Click(object sender, RoutedEventArgs e)
 		{
 			GroupList group = dg_mygr.SelectedItem as GroupList;
 			View_win win = new View_win(this, group.id);
 			win.Show();
 		}
-
 		private void B_profile_Click(object sender, RoutedEventArgs e)
 		{
 			Profile_win win = new Profile_win(this);
 			win.Show();
 		}
+		#endregion
 	}
 }

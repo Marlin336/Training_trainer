@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Npgsql;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Npgsql;
 
 namespace Training_trainer
 {
@@ -23,6 +12,7 @@ namespace Training_trainer
 		Main_win super { get; }
 		Profile_win prof_win { get; }
 		string old_login { get; }
+
 		public Profedit_win(Main_win super, Profile_win profile)
 		{
 			this.super = super;
@@ -53,12 +43,11 @@ namespace Training_trainer
 			}
 			finally { super.conn.Close(); }
 		}
-
+		#region events
 		private void Tb_pass_GotFocus(object sender, RoutedEventArgs e)
 		{
 			tb_repass.Clear();
 		}
-
 		private void B_ok_Click(object sender, RoutedEventArgs e)
 		{
 			if (tb_pass.Password == tb_repass.Password)
@@ -104,5 +93,6 @@ namespace Training_trainer
 			else
 				MessageBox.Show("Пароли не совпадают", null, MessageBoxButton.OK, MessageBoxImage.Exclamation, MessageBoxResult.OK);
 		}
+		#endregion
 	}
 }

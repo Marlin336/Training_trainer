@@ -1,37 +1,28 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Npgsql;
 
 namespace Training_trainer
 {
-    /// <summary>
-    /// Логика взаимодействия для Crtgr_win.xaml
-    /// </summary>
-    public partial class Crtgr_win : Window
+	/// <summary>
+	/// Логика взаимодействия для Crtgr_win.xaml
+	/// </summary>
+	public partial class Crtgr_win : Window
     {
 		public Main_win super { get; }
 		private bool[] week = new bool[7];
 		private string[] timetable = new string[7];
 		public List<ExerciseList> exerciseList = new List<ExerciseList>();
 		private int group_id;
+
         public Crtgr_win(Main_win super)
         {
             InitializeComponent();
 			this.super = super;
 			b_save.Click += B_save_Click_1;
         }
-
 		public Crtgr_win(Main_win super, GroupList group, bool edit)
 		{
 			InitializeComponent();
@@ -133,7 +124,7 @@ namespace Training_trainer
 			foreach (var item in exerciseList)
 				dg_list.Items.Add(item);
 		}
-
+		#region events
 		#region checkbox_checking
 		private void Cb_mon_Checked(object sender, RoutedEventArgs e)
 		{
@@ -222,13 +213,11 @@ namespace Training_trainer
 			num_maxage.IsEnabled = false;
 		}
 		#endregion
-
 		private void B_add_exerc_Click(object sender, RoutedEventArgs e)
 		{
 			XrcsList_win win = new XrcsList_win(this, super, exerciseList);
 			win.Show();
 		}
-
 		private void B_save_Click_1(object sender, RoutedEventArgs e)
 		{
 			#region cast
@@ -338,7 +327,6 @@ namespace Training_trainer
 			}
 			finally { super.conn.Close(); }
 		}
-
 		private void Dg_list_MouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
 			if (dg_list.SelectedItem != null)
@@ -347,5 +335,6 @@ namespace Training_trainer
 				win.Show();
 			}
 		}
+		#endregion
 	}
 }

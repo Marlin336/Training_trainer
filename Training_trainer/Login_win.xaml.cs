@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Npgsql;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Npgsql;
 
 namespace Training_trainer
 {
@@ -24,17 +13,15 @@ namespace Training_trainer
 		{
 			InitializeComponent();
 		}
-
+		#region events
 		private void Tb_log_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			b_ent.IsEnabled = tb_log.Text != "" && tb_pass.Password != "";
 		}
-
 		private void Tb_pass_PasswordChanged(object sender, RoutedEventArgs e)
 		{
 			b_ent.IsEnabled = tb_log.Text != "" && tb_pass.Password != "";
 		}
-
 		private void B_ent_Click(object sender, RoutedEventArgs e)
 		{
 			string conn_param = "Server=127.0.0.1;Port=5432;User Id=Training_login;Password=0000;Database=Training;";
@@ -62,5 +49,6 @@ namespace Training_trainer
 				}
 			}
 		}
+		#endregion
 	}
 }

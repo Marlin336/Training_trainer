@@ -1,17 +1,9 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Npgsql;
 
 namespace Training_trainer
 {
@@ -77,13 +69,12 @@ namespace Training_trainer
 			dg_unpicked.Items.Clear();
 			FillUnpickTable();
 		}
-
+		#region events
 		private void B_crt_exerc_Click(object sender, RoutedEventArgs e)
 		{
 			CrtXrcs_win win = new CrtXrcs_win(super, this);
 			win.Show();
 		}
-
 		private void Dg_unpicked_MouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
 			if (dg_unpicked.SelectedItem != null)
@@ -94,7 +85,6 @@ namespace Training_trainer
 				UpdateUnpickTable();
 			}
 		}
-
 		private void Dg_picked_MouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
 			if (dg_picked.SelectedItem != null)
@@ -105,27 +95,24 @@ namespace Training_trainer
 				UpdateUnpickTable();
 			}
 		}
-
 		private void Dg_unpicked_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
 		{
 			b_unpicked_info.IsEnabled = dg_unpicked.SelectedItems.Count != 0;
 		}
-
 		private void Dg_picked_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
 		{
 			b_picked_info.IsEnabled = dg_picked.SelectedItems.Count != 0;
 		}
-
 		private void B_unpicked_info_Click(object sender, RoutedEventArgs e)
 		{
 			CrtXrcs_win win = new CrtXrcs_win(super, dg_unpicked.SelectedItem as ExerciseList);
 			win.Show();
 		}
-
 		private void B_picked_info_Click(object sender, RoutedEventArgs e)
 		{
 			CrtXrcs_win win = new CrtXrcs_win(super, dg_picked.SelectedItem as ExerciseList);
 			win.Show();
 		}
+		#endregion
 	}
 }

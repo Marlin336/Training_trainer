@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Training_trainer"
         mc:Ignorable="d"
-        Title="Вход" Height="190" Width="327" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Вход тренер" Height="190" Width="327" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
