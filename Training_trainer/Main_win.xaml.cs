@@ -26,7 +26,7 @@ namespace Training_trainer
 
 		private void FillMyGroupsTable()
 		{
-			string sql = "SELECT * FROM public.group_view_admin where trainer_id = " + user_id;
+			string sql = "SELECT * FROM public.group_view where trainer_id = " + user_id;
 			NpgsqlCommand comm = new NpgsqlCommand(sql, conn);
 			NpgsqlDataReader reader;
 			try
@@ -50,7 +50,7 @@ namespace Training_trainer
 		}
 		private void FillAllGroupsTable()
 		{
-			string sql = "SELECT * FROM public.group_view_admin";
+			string sql = "SELECT * FROM public.group_view";
 			NpgsqlCommand comm = new NpgsqlCommand(sql, conn);
 			NpgsqlDataReader reader;
 			try
@@ -138,6 +138,7 @@ namespace Training_trainer
 					comm.ExecuteNonQuery();
 					conn.Close();
 					UpdateMyGroupsTable();
+					UpdateAllGroupsTable();
 				}
 				catch (NpgsqlException ex)
 				{

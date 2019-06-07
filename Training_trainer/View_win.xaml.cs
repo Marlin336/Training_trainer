@@ -15,9 +15,9 @@ namespace Training_trainer
         {
             InitializeComponent();
 			this.super = super;
-			string sql = "select customer_view_admin.id, sname, fname, pname, age, mail " +
-			"from customer_view_admin, \"customer-customer_group\" " +
-			"where customer_view_admin.id = \"customer-customer_group\".id_customer and \"customer-customer_group\".id_group = " + group_id;
+			string sql = "select customer_view.id, sname, fname, pname, age, mail " +
+			"from customer_view, \"customer-customer_group\" " +
+			"where customer_view.id = \"customer-customer_group\".id_customer and \"customer-customer_group\".id_group = " + group_id;
 			NpgsqlCommand comm = new NpgsqlCommand(sql, super.conn);
 			NpgsqlDataReader reader;
 			try
